@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flip Cards RALARO - Defeat Theme</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* Video background */
+  #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  /* Header text */
+  .defeat-header {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ff1a1a;
+    text-shadow: 0 0 10px #ff4c4c, 0 0 20px #990000, 0 0 30px #660000;
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: pulseText 1.5s infinite alternate;
+  }
+
+  @keyframes pulseText {
+    0% { text-shadow: 0 0 10px #ff4c4c, 0 0 20px #990000, 0 0 30px #660000; }
+    100% { text-shadow: 0 0 20px #ff4c4c, 0 0 30px #ff0000, 0 0 40px #990000; }
+  }
+
+  .flip-card {
+    perspective: 1000px;
+  }
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  .flip-card.flipped .flip-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+
+  /* Defeat red League style border */
+  .lol-border {
+    position: relative;
+    padding: 4px;
+    background: linear-gradient(135deg, #8b0000, #ff0000, #4b0000);
+    box-shadow: 0 0 15px rgba(255,0,0,0.7);
+    border-radius: 0.75rem;
+    animation: pulseRedBorder 1.5s infinite alternate;
+  }
+  .lol-border::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: 0.6rem;
+    background: rgba(30,0,0,0.85);
+    z-index: -1;
+  }
+
+  /* Card front with black text */
+  .flip-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #000000; /* black letters */
+    text-shadow: 0 0 10px #990000; /* subtle red glow for readability */
+    animation: none;
+  }
+
+  /* Card back */
+  .flip-back {
+    transform: rotateY(180deg);
+  }
+  .flip-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.6rem;
+  }
+
+  @keyframes pulseRedBorder {
+    0% { box-shadow: 0 0 15px rgba(255,0,0,0.7); }
+    100% { box-shadow: 0 0 30px rgba(255,50,50,0.9); }
+  }
+</style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start p-6">
+
+  <!-- Video Background -->
+  <video id="bg-video" autoplay muted loop>
+    <source src="pic/DEFEAT Loop - League Of Legends.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Header -->
+  <h1 class="defeat-header relative z-10 text-2xl sm:text-3xl md:text-5xl">
+  MGA BOBO RA LARO POTA G<br>(Click the Fucking Cards)</br>
+</h1>
+
+
+  <!-- Card Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 md:gap-6 relative z-10 mt-40 md:mt-[350px]">
+  <!-- Cards 1-21 -->
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">M</div>
+      <div class="flip-back">
+        <img src="pic/1 (2).jpg" alt="Image 1" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">G</div>
+      <div class="flip-back">
+        <img src="pic/2 (2).jpg" alt="Image 2" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">A</div>
+      <div class="flip-back">
+        <img src="pic/3 (2).jpg" alt="Image 3" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">B</div>
+      <div class="flip-back">
+        <img src="pic/4.jpg" alt="Image 4" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">E</div>
+      <div class="flip-back">
+        <img src="pic/5.jpg" alt="Image 5" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">S</div>
+      <div class="flip-back">
+        <img src="pic/66666.jpg" alt="Image 6" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">T</div>
+      <div class="flip-back">
+        <img src="pic/7.jpg" alt="Image 7" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">F</div>
+      <div class="flip-back">
+        <img src="pic/8.jpg" alt="Image 8" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">R</div>
+      <div class="flip-back">
+        <img src="pic/99999.jpg" alt="Image 9" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">I</div>
+      <div class="flip-back">
+        <img src="pic/10.jpg" alt="Image 10" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">E</div>
+      <div class="flip-back">
+        <img src="pic/11.jpg" alt="Image 11" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">N</div>
+      <div class="flip-back">
+        <img src="pic/12.jpg" alt="Image 12" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">D</div>
+      <div class="flip-back">
+        <img src="pic/13.jpg" alt="Image 13" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">R</div>
+      <div class="flip-back">
+        <img src="pic/14.jpg" alt="Image 14" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">A</div>
+      <div class="flip-back">
+        <img src="pic/15.jpg" alt="Image 15" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">L</div>
+      <div class="flip-back">
+        <img src="pic/16.jpg" alt="Image 16" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">A</div>
+      <div class="flip-back">
+        <img src="pic/17.jpg" alt="Image 17" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">R</div>
+      <div class="flip-back">
+        <img src="pic/18.jpg" alt="Image 18" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">O</div>
+      <div class="flip-back">
+        <img src="pic/19.jpg" alt="Image 19" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">🖕</div>
+      <div class="flip-back">
+        <img src="pic/200000.jpg" alt="Image 20" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card w-40 h-60 cursor-pointer" tabindex="0">
+    <div class="flip-inner lol-border">
+      <div class="flip-front">😔</div>
+      <div class="flip-back">
+        <img src="pic/21.jpg" alt="Image 21" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.flip-card').forEach(card => {
+      card.addEventListener('click', () => card.classList.toggle('flipped'));
+      card.addEventListener('keydown', e => {
+        if(e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.classList.toggle('flipped');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
